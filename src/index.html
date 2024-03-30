@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persnoal Portfolio</title>
+    <link href="./output.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="flex justify-between items-center py-4 sm:px-10 px-6 bg-slate-500 text-white overflow-x-hidden">
+        <div class="text-2xl sm:basis-48">
+            <p class="">logo</p>
+        </div>
+        <nav class="sm:block hidden fixed sm:static right-0 sm:bg-slate-500 bg-slate-700 top-0 sm:h-max h-[100vh] sm:w-max w-[300px] sm:translate-x-0 translate-x-80  duration-500"
+            id="navBar">
+            <ul class="flex text-lg sm:flex-row flex-col sm:m-0 my-7">
+                <li class="m-2"><a href="#"
+                        class="my-4  py-2 px-2  hover:bg-slate-600 rounded-sm transition bg-slate-600 sm:px-3 sm:py-2 sm:mx-1">Home</a>
+                </li>
+                <li class="m-2"><a href="../Contact/contact.html"
+                        class="my-4  py-2 px-2 hover:bg-slate-600 rounded-sm transition sm:px-3 sm:py-2 sm:mx-1">Contact</a>
+                </li>
+                <li class="m-2"><a href="../projects/projects.html"
+                        class="my-4   py-2 px-2 hover:bg-slate-600 rounded-sm transition sm:px-3 sm:py-2 sm:mx-1">Projects</a>
+                </li>
+                <li class="m-2"><a href="../blog/blog.html"
+                        class="my-4 py-2 px-2 hover:bg-slate-600 rounded-sm transition sm:px-3 sm:py-2 sm:mx-1">Blog</a>
+                </li>
+                <li class="m-2"><a href="../about/about.html"
+                        class="my-4 py-2 px-2 hover:bg-slate-600 rounded-sm transition sm:px-3 sm:py-2 sm:mx-1">About</a>
+                </li>
+            </ul>
+            <p class="fixed right-4 top-6 text-3xl cursor-pointer sm:hidden" id="closeMenuBtn">&Cross;</p>
+        </nav>
+        <div>
+            <input type="search" class="shadow-black shadow-sm  py-2 px-4 outline-none rounded-md text-black"
+                placeholder="Search">
+        </div>
+        <div class="flex flex-col gap-2 sm:hidden cursor-pointer" id="hamberger">
+            <div class="w-[40px] h-[2px] bg-black leading-8"></div>
+            <div class="w-[40px] h-[2px] bg-black leading-8"></div>
+            <div class="w-[40px] h-[2px] bg-black leading-8"></div>
+        </div>
+    </header>
+
+    <main class="h-[100vh] w-full">
+
+        <section
+            class="px-6 flex justify-center items-center flex-col bg-[url('/images/hero_image.jpg')] bg-center bg-cover h-[60vh] bg-no-repeat">
+            <h1 class="text-4xl font-bold">Hello World</h1>
+            <p class="my-4">This is my Persnol Portfolio. Contact me If you want a website</p>
+            <button class="bg-zinc-600 py-3 px-4 rounded-md text-white text-xl ">Contact Me</button>
+        </section>
+
+        <section class="py-10 flex justify-center items-center gap-10 bg-gray-500 flex-wrap">
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">HTML</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">CSS</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">Tailwind</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">JavaScript
+            </div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">React</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">NodeJs</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">Express</div>
+            <div class="h-[100px] w-[100px] bg-orange-500 rounded-full flex justify-center items-center">Mongodb</div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
