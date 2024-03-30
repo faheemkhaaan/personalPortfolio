@@ -1,7 +1,7 @@
 const hamberger = document.getElementById('hamberger');
 const closeMenuBtn = document.getElementById("closeMenuBtn");
 const navBar = document.getElementById("navBar");
-
+const skillsList = document.getElementById('skillsList');
 // navBar.style.transform = 'translateX(300px)'
 
 hamberger.onclick = function(){
@@ -17,3 +17,5 @@ closeMenuBtn.onclick = function(){
         navBar.classList.add('hidden');
     },700)
 }
+
+console.log(skillsList);
