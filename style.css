@@ -1,0 +1,17 @@
+#hero{
+    background-image: url(./images/hero_image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.slide{
+    animation: slide 1s linear delay iteration-count direction fill-mode;
+    animation: slide 1s ease-in-out  1 forwards ;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+#follow_Me{
+    background-image: url("/images/followMeBg.jpg");
+    background-position: center;
+    background-size: cover;
+}
