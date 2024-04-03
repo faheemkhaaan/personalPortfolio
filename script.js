@@ -2,7 +2,7 @@
 let portfolioPage 
 let blogPage 
 
-if(window.location.pathname != '/index.html'){
+if(window.location.pathname !== './index.html'){
     portfolioPage = 'text-white'
     blogPage = 'text-orange-600'
 
@@ -11,9 +11,7 @@ if(window.location.pathname != '/index.html'){
     portfolioPage = 'text-orange-600'
     blogPage = 'text-white'
 }
-if(window.location.href == 'http://127.0.0.1:5500/blog/blog.html'){
 
-}
 console.log(window.location);
 const body = document.body
 function createFooter(){
