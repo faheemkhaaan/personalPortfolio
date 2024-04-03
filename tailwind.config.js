@@ -40,8 +40,9 @@ module.exports = {
        animation : {
         slide: 'slide 1s ease-in-out forwards',
         slideImg: 'slideImg 1s ease-in-out forwards',
-        fadeIn: 'fadeIn 1s ease-in-out .1s 1 forwards'
-       }
+        fadeIn: 'fadeIn 1s ease-in-out .1s 1 forwards',
+       },
+
       
 
       },
