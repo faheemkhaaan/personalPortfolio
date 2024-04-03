@@ -129,20 +129,6 @@ const projectInfo = [
     },
    
 ]
-const addresss = '/personalPortfolio/index.html'
-if (window.location.pathname !== '/index.html') {
-    portfolioPage = 'text-white'
-    blogPage = 'text-orange-600'
-
-} else {
-    imgAddress = `./images/myProfile.png`
-    portfolioPage = 'text-orange-600'
-    blogPage = 'text-white'
-    
-    createSkills();
-    createProjects();
-}
-
 function createSkills() {
     const skills = document.getElementById('allSkills');
     const totalSkills = skillsInfo.map((skill) => {
@@ -174,6 +160,10 @@ function createProjects(){
 
     projectList.innerHTML = `${projects.join('')}`
 }
+
+
+createSkills();
+createProjects();
 const body = document.body
 function createFooter() {
     return `<div class="sm:h-[60vh] h-max flex sm:flex-row flex-col-reverse justify-between items-center py-5 px-8 my-10">
