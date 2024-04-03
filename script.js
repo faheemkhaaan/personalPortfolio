@@ -2,7 +2,7 @@
 let portfolioPage 
 let blogPage 
 
-if(window.location.pathname !== './index.html'){
+if(window.location.pathname !== '/personalPortfolio/index.html'){
     portfolioPage = 'text-white'
     blogPage = 'text-orange-600'
 
@@ -12,7 +12,7 @@ if(window.location.pathname !== './index.html'){
     blogPage = 'text-white'
 }
 
-console.log(window.location);
+console.log(window.location.pathname);
 const body = document.body
 function createFooter(){
     return `<div class="sm:h-[60vh] h-max flex sm:flex-row flex-col-reverse justify-between items-center py-5 px-8 my-10">
