@@ -1,7 +1,8 @@
 
 let portfolioPage
 let blogPage
-
+const skillsSection  = document.getElementById("skillsSection");
+const feedbackSection = document.getElementById("feedbackSection");
 const skillsInfo = [
     {
         img: './images/html-logo-png-3.png',
@@ -128,7 +129,8 @@ const projectInfo = [
     },
    
 ]
-if (window.location.pathname !== '/personalPortfolio/index.html') {
+const addresss = '/personalPortfolio/index.html'
+if (window.location.pathname !== '/index.html') {
     portfolioPage = 'text-white'
     blogPage = 'text-orange-600'
 
@@ -140,8 +142,6 @@ if (window.location.pathname !== '/personalPortfolio/index.html') {
     createSkills();
     createProjects();
 }
-
-
 
 function createSkills() {
     const skills = document.getElementById('allSkills');
@@ -177,7 +177,7 @@ function createProjects(){
 const body = document.body
 function createFooter() {
     return `<div class="sm:h-[60vh] h-max flex sm:flex-row flex-col-reverse justify-between items-center py-5 px-8 my-10">
-    <div class="sm:w-[50%] w-full h-full">
+    <div class="sm:w-[50%] w-full h-full" id="footerTitle">
         <img src="./images/myProfile.png" alt="" class="object-contain w-full h-full">
     </div>
     <div class="p-6 w-[90%] sm:[80%] md:h-[50vh] md:w-[50%]">
@@ -218,20 +218,39 @@ function createHeader() {
             id="navBar">
             <li class="">
                 <a href="./index.html"
-                    class="px-4 py-3   rounded-md ${portfolioPage} hover:text-orange-600 hover:rounded-md duration-100">
+                    class="px-4 py-3   rounded-md  hover:text-orange-600 hover:rounded-md duration-100">
                     Portfolio
                 </a>
             </li>
             <li>
-                <a href="./blog.html" class="px-4 py-3 ${blogPage} hover:text-orange-600 hover:rounded-md duration-100">
-                    Blog
+                <a href="#" onclick="scrollIntoSection('projectListTitle')" class="px-4 py-3  hover:text-orange-600 hover:rounded-md duration-100">
+                    My Projects
                 </a>
             </li>
             <li>
-                <a href="" class="px-8 py-3  hover:text-orange-600 duration-100 border-2 hidden sm:block">
+                <a href="#" onclick="scrollIntoSection('feedbacksTitle')" class="px-4 py-3  hover:text-orange-600 hover:rounded-md duration-100">
+                    FeedBacks
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="px-8 py-3  hover:text-orange-600 duration-100  hidden sm:block" onclick="scrollIntoSection('contactTitle')">
                     Contact Us
                 </a>
             </li>
+
+            <li>
+                <a href="#" onclick="scrollIntoSection('aboutTitle')" class="px-8 py-3  hover:text-orange-600 duration-100  hidden sm:block"  >
+                    About Me
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="px-8 py-3  hover:text-orange-600 duration-100  hidden sm:block" onclick="scrollIntoSection('footerTitle')" >
+                    Join our newsletter
+                </a>
+            </li>
+
             <li class="sm:hidden fixed right-5 top-6 cursor-pointer" id="closeMenuBtn">&Cross;</li>
         </ul>
     </nav>
@@ -366,3 +385,25 @@ function createListNumbering(color) {
     return div;
 }
 feedbacks()
+
+
+const observer = new IntersectionObserver(entries =>{
+    entries.forEach(entry =>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('animate-[slide_1s_ease-in-out_.1s_1_forwards]');
+            observer.unobserve(entry.target);
+        }
+    })
+    console.log(entries);
+})
+observer.observe(skillsSection);
+observer.observe(projectList)
+
+console.log(observer);
+
+
+function scrollIntoSection(sectionId){
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({behavior: 'smooth'})
+    console.log(section);
+}

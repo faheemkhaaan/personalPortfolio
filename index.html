@@ -17,28 +17,28 @@
     <main class="overflow-x-hidden">
         <section>
             <div
-                class="h-max md:h-[80vh] flex justify-around items-center flex-col  lg:px-40 md:px-24 md:py-4 px-6 py-8 sm:flex-row bg-[#c9c3b1]">
+                class="h-max md:h-[80vh] flex justify-around items-center flex-col  lg:px-40 md:px-24 md:py-4 px-6 py-8 sm:flex-row bg-[#c9c3b1] overflow-hidden">
                 <div class="sm:w-[50%]">
-                    <h1 class="text-[#404147] text-[3.2rem] my-2 font-bold">My Persnoal Portfolio</h1>
+                    <h1 class="text-[#404147] text-[3.2rem] my-2 font-bold animate-[slide_1s_ease-in-out_1_forwards] translate-y-[50vh]">My Persnoal Portfolio</h1>
                     <div>
-                        <h2 class="my-3 text-2xl text-[#706960]">Unleashing Your web Presence</h2>
-                        <p>
+                        <h2 class="my-3 text-2xl text-[#706960] animate-[slide_1s_ease-in-out_.2s_1_forwards] translate-y-[50vh]">Unleashing Your web Presence</h2>
+                        <p class="animate-[slide_1s_ease-in-out_.5s_1_forwards] translate-y-[50vh]">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae vitae odit ut eveniet
                             laudantium ab quos quod error. Deleniti unde delectus distinctio eveniet aspernatur ea harum
                             nihil provident esse? Similique!
                         </p>
-                        <button class="rounded-[100vw] bg-orange-600 py-2 px-12 my-4 hover:bg-orange-500 duration-200">
+                        <button class="rounded-[100vw] bg-orange-600 py-2 px-12 my-4 hover:bg-orange-500 duration-200 translate-y-[200px] animate-[slide_.8s_ease-in-out_1s_1_forwards]">
                             Discover More
                         </button>
                     </div>
                 </div>
                 <div class="sm:w-[50%] h-full">
-                    <img src="./images/myProfileLeft.png" alt="" class="w-full h-full object-contain">
+                    <img src="./images/myProfileLeft.png" alt="" class="w-full h-full object-contain animate-slideImg">
                 </div>
             </div>
         </section>
 
-        <section class="py-8 mx-3 text-center">
+        <section class="py-8 mx-3 text-center translate-y-[200px] opacity-0" id="skillsSection">
             <h2 class="text-center text-[3rem] font-bold mb-5 cursor-pointer" id="showSkills">Experties In</h2>
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores doloremque fugit temporibus ab
@@ -53,22 +53,22 @@
         </section>
         <section class="p-5 flex flex-col justify-center items-center">
             <div class="w-full md:w-[50%]">
-                <h2 class="text-[3rem] my-3 font-semibold text-center">My Projects</h2>
+                <h2 class="text-[3rem] my-3 font-semibold text-center" id="projectListTitle">My Projects</h2>
                 <p class="mb-7 text-center :px-8">
                     These are some of the projects that I have worked on. You can check them out by clicking on any of
                     the below cards. 
                 </p>
             </div>
 
-            <div class=" flex flex-wrap justify-center items-start gap-7" id="projectList">
+            <div class=" flex flex-wrap justify-center items-start gap-7 translate-y-[200px] opacity-0" id="projectList">
                
             
             </div>
         </section>
 
-        <section class=" flex justify-center items-center flex-col relative bg-zinc-400 gap-3 py-8">
+        <section class=" flex justify-center items-center flex-col relative bg-zinc-400 gap-3 py-8" id="feedbackSection">
             <div>
-                <h2 class="text-center text-[3rem] font-bold">Feedback from Clients</h2>
+                <h2 class="text-center text-[3rem] font-bold"  id="feedbacksTitle">Feedback from Clients</h2>
             </div>
             <div class="w-[300px] h-[60%] min-h-[40vh] bg-white sm:w-[400px] md:w-[500px] lg:w-[800px] p-7 flex justify-between items-center flex-col relative">
 
@@ -128,7 +128,7 @@
         </section>
 
         <section class="my-8 px-2 sm:px-10">
-            <h2 class="font-bold text-[3rem] text-center my-4">Contact Us</h2>
+            <h2 class="font-bold text-[3rem] text-center my-4" id="contactTitle">Contact Us</h2>
             <p class="text-center my-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
                 consequuntur est eos at sit iure nesciunt nobis eius sunt unde?</p>
 
@@ -178,7 +178,7 @@
 
         <section class="flex justify-between items-center sm:flex-row flex-col my-8 mx-0 sm:mx-10 px-2 sm:p-4">
             <div class="p-8 w-full sm:w-[50%]">
-                <h2 class="text-3xl font-bold ">About Me</h2>
+                <h2 class="text-3xl font-bold " id="aboutTitle">About Me</h2>
                 <p class="font-semibold py-3">My name is Faheem Khan</p>
                 <p class="py-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione necessitatibus magni accusamus
