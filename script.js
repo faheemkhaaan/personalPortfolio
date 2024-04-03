@@ -1,20 +1,181 @@
 
-let portfolioPage 
-let blogPage 
+let portfolioPage
+let blogPage
 
-if(window.location.pathname !== '/personalPortfolio/index.html'){
+const skillsInfo = [
+    {
+        img: './images/html-logo-png-3.png',
+        title: 'HTMl'
+    },
+    {
+        img: './images/css.png',
+        title: 'Css'
+    },
+    {
+        img: './images/tailwind-css-icon.webp',
+        title: 'Tailwind css'
+    },
+    {
+        img: './images/javascript-logo-7539.png',
+        title: 'JavaScript'
+    },
+    {
+        img: './images/react-1-logo.png',
+        title: 'React'
+    },
+    {
+        img: './images/node_js.webp',
+        title: 'NodeJs'
+    },
+    {
+        img: './images/express.png',
+        title: 'Express'
+    },
+    {
+        img: './images/mongoDb.png',
+        title: 'MongoDb'
+    },
+]
+
+const projectInfo = [
+    {
+        img: `./images/desktop-preview-1.jpg`,
+        title: `Newsletter
+        Sign up page`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: 'https://faheemkhaaan.github.io/frontendMentor_NewsletterChallenge/',
+    },
+    {
+        img: `./images/desktop-preview-2.jpg`,
+        title: `Crowdfunding
+        landing page`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: 'https://faheemkhaaan.github.io/frontendMentor_Crowdfunding-product-page/',
+    },
+    {
+        img: `./images/desktop-preview-3.jpg`,
+        title: `Product
+        Card Preview`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: 'https://faheemkhaaan.github.io/frontendMentor_product-review-page_Challenge/',
+    },
+    {
+        img: `./images/desktop-preview-4.jpg`,
+        title: `Advice
+        Genrator App`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: 'https://faheemkhaaan.github.io/frontendMentor_Advice-genrator-app_Challenge/',
+    },
+    {
+        img: `./images/desktop-preview-5.jpg`,
+        title: `Interactive Card details`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Interactive-Card_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-6.jpg`,
+        title: `Age Calculator App`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Age-calculator_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-7.jpg`,
+        title: `Time Tracking Dashboard`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Intro-component-with-sign-up-form_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-8.jpg`,
+        title: `Intro Commponent wiht sign up form`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Time-tracking-dashboard_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-9.jpg`,
+        title: `Base Apparel Comming Soon page`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Base-apparel_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-10.jpg`,
+        title: `Tip Calculator`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_Tip-calculator-app_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-11.jpg`,
+        title: `Calculator`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: ' https://faheemkhaaan.github.io/frontendMentor_calculator_Challenge/',
+    },
+    {
+        img: `images/desktop-preview-12.jpg`,
+        title: ` Ecommerce Product page`,
+        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta repudiandae suscipit
+        architecto vel quo provident autem temporibus corporis quas maiores veniam`,
+        link: 'https://faheemkhaaan.github.io/frontendMentor_Ecommerce-product-page_Challenge/',
+    },
+   
+]
+if (window.location.pathname !== '/personalPortfolio/index.html') {
     portfolioPage = 'text-white'
     blogPage = 'text-orange-600'
 
-}else{
+} else {
     imgAddress = `./images/myProfile.png`
     portfolioPage = 'text-orange-600'
     blogPage = 'text-white'
+    
+    createSkills();
+    createProjects();
 }
 
-console.log(window.location.pathname);
+
+
+function createSkills() {
+    const skills = document.getElementById('allSkills');
+    const totalSkills = skillsInfo.map((skill) => {
+        return `<div
+        class="w-[100px] h-[100px] bg-orange-600 flex justify-center items-center text-white  rounded-full relative group">
+        <img src="${skill.img}" alt="" class="w-[80px] h-[80px] object-contain ">
+        <p class="group-hover:translate-y-6 -z-10 duration-200 group-hover:text-black absolute bottom-0 font-bold">${skill.title}</p>
+    </div>`
+    })
+    skills.innerHTML = `${totalSkills.join('')}`
+}
+function createProjects(){
+    const projectList = document.getElementById('projectList');
+    const projects = projectInfo.map((pro)=>{
+        return `<div class="w-[300px] h-[250px] bg-blue-600 rounded-md shadow-0xl relative  cursor-pointer">
+        <img src="${pro.img}" alt="" class="object-cover w-full h-full">
+
+        <div
+            class="absolute inset-0 p-6 bg-gradient-to-t from-cyan-900 to-blue-50  z-10 opacity-0 hover:opacity-100 duration-300">
+            <h2 class="py-2 text-2xl font-semibold"><a
+                    href="${pro.link}">Newsletter
+                    Sign up page</a></h2>
+            <p class="">
+                <a href="${pro.link}"> ${pro.description} </a>
+            </p>
+        </div>
+    </div>`
+    });
+
+    projectList.innerHTML = `${projects.join('')}`
+}
 const body = document.body
-function createFooter(){
+function createFooter() {
     return `<div class="sm:h-[60vh] h-max flex sm:flex-row flex-col-reverse justify-between items-center py-5 px-8 my-10">
     <div class="sm:w-[50%] w-full h-full">
         <img src="./images/myProfile.png" alt="" class="object-contain w-full h-full">
@@ -36,7 +197,7 @@ function createFooter(){
 </div>`
 }
 
-function createHeader(){
+function createHeader() {
     return ` <div class="bg-[#dbb89a] text-white py-5 px-12 relative overflow-x-hidden">
     <div class="absolute left-0 top-2 w-[100vw] h-[3px] bg-white "></div>
     <div class="p-3 flex justify-between">
@@ -101,18 +262,18 @@ const showSkills = document.getElementById('showSkills')
 const allSkills = document.getElementById("allSkills");
 // navBar.style.transform = 'translateX(300px)'
 
-hamberger.addEventListener('click',() =>{
+hamberger.addEventListener('click', () => {
     navBar.classList.remove('hidden')
-    setTimeout(()=>{
+    setTimeout(() => {
         navBar.classList.remove("translate-x-80");
-    },100);
+    }, 100);
 })
-closeMenuBtn.addEventListener('click',()=>{
+closeMenuBtn.addEventListener('click', () => {
     navBar.classList.add("translate-x-80");
 
-    setTimeout(()=>{
+    setTimeout(() => {
         navBar.classList.add('hidden');
-    },700)
+    }, 700)
 })
 
 
@@ -152,44 +313,42 @@ let color = 'bg-white';
 let increment = 0;
 let changeColor
 
-
-
-left.addEventListener('click',()=>{
+left.addEventListener('click', () => {
     moveLeft()
     feedbacks()
 })
-right.addEventListener('click',()=>{
+right.addEventListener('click', () => {
     moveRight();
     feedbacks()
-}) 
-function moveRight(){
+})
+function moveRight() {
     increment = increment == 0 ? comments.length - 1 : (increment - 1) % comments.length;
     userComment.textContent = comments[increment].comment
     userName.textContent = comments[increment].user
 }
-function moveLeft(){
+function moveLeft() {
     increment = (increment + 1) % comments.length;
     userComment.textContent = comments[increment].comment
     userName.textContent = comments[increment].user
 }
-function toIndex(){
+function toIndex() {
     userComment.textContent = comments[increment].comment
     userName.textContent = comments[increment].user
 }
-function feedbacks(){
+function feedbacks() {
     commentNumber.textContent = ''
-    comments.forEach((_,index)=>{
+    comments.forEach((_, index) => {
         changeColor = index == increment ? 'bg-orange-600' : 'bg-white';
         const list = createListNumbering(changeColor)
-        
-        list.addEventListener('click',()=>{
+
+        list.addEventListener('click', () => {
             increment = index
             const children = Array.from(commentNumber.children)
             toIndex()
-            children.forEach((child,i)=>{
-                if(increment === i){
+            children.forEach((child, i) => {
+                if (increment === i) {
                     child.className = `w-3 h-3 bg-orange-600 rounded-full cursor-pointer`
-                }else{
+                } else {
                     child.className = `w-3 h-3 bg-white rounded-full cursor-pointer`
                 }
             })
@@ -199,10 +358,10 @@ function feedbacks(){
         commentNumber.appendChild(list);
     });
 }
-function createListNumbering(color){
-    
+function createListNumbering(color) {
+
     const div = document.createElement("div");
-   
+
     div.className = `w-3 h-3 ${color} rounded-full cursor-pointer`
     return div;
 }
