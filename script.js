@@ -1,11 +1,8 @@
 
-let imgAddress = `<img src="./images/myProfile.png" alt="" class="object-contain w-full h-full">`;
-
 let portfolioPage 
 let blogPage 
 
-if(window.location.href != 'http://127.0.0.1:5500/index.html'){
-    imgAddress = `../images/myProfile.png`
+if(window.location.pathname != '/index.html'){
     portfolioPage = 'text-white'
     blogPage = 'text-orange-600'
 
@@ -17,11 +14,12 @@ if(window.location.href != 'http://127.0.0.1:5500/index.html'){
 if(window.location.href == 'http://127.0.0.1:5500/blog/blog.html'){
 
 }
+console.log(window.location);
 const body = document.body
 function createFooter(){
     return `<div class="sm:h-[60vh] h-max flex sm:flex-row flex-col-reverse justify-between items-center py-5 px-8 my-10">
     <div class="sm:w-[50%] w-full h-full">
-        <img src="${imgAddress}" alt="" class="object-contain w-full h-full">
+        <img src="./images/myProfile.png" alt="" class="object-contain w-full h-full">
     </div>
     <div class="p-6 w-[90%] sm:[80%] md:h-[50vh] md:w-[50%]">
         <div class="flex justify-between items-center flex-wrap">
@@ -60,13 +58,13 @@ function createHeader(){
         <ul class="justify-center items-center py-7  gap-1 text-white hidden fixed right-0 top-0 h-[100vh] w-[300px] flex-wrap bg-slate-700 z-10 translate-x-80 duration-300 sm:flex sm:relative sm:h-max sm:w-max sm:bg-transparent sm:p-0 sm:translate-x-0"
             id="navBar">
             <li class="">
-                <a href="../index.html"
+                <a href="./index.html"
                     class="px-4 py-3   rounded-md ${portfolioPage} hover:text-orange-600 hover:rounded-md duration-100">
                     Portfolio
                 </a>
             </li>
             <li>
-                <a href="./blog/blog.html" class="px-4 py-3 ${blogPage} hover:text-orange-600 hover:rounded-md duration-100">
+                <a href="./blog.html" class="px-4 py-3 ${blogPage} hover:text-orange-600 hover:rounded-md duration-100">
                     Blog
                 </a>
             </li>
